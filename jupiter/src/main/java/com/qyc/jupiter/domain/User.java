@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "mooc_users")
-public class User implements Serializable {
+public class User extends AbstractUser implements UserInter , Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -108,5 +108,15 @@ public class User implements Serializable {
                 ", email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 "}";
+    }
+
+    @Override
+    public String matchUUU() {
+        return "测试";
+    }
+
+    @Override
+    public String matchUUU2() {
+        return "测试";
     }
 }

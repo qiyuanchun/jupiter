@@ -12,4 +12,15 @@ public class PageableResult<T> implements Serializable {
     private static final long serialVersionUID = 1L;
     private final long total;
     private final List<T> data;
+
+
+    public static void main(String[] args) {
+
+
+
+        int n = 3;
+        n = n >> 2;
+
+        System.out.println(n);
+    }
 }

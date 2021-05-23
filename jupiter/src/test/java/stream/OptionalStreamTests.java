@@ -1,15 +1,14 @@
 package stream;
 
+import com.qyc.jupiter.domain.AbstractUser;
 import com.qyc.jupiter.domain.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.CollectionUtils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -72,8 +71,8 @@ public class OptionalStreamTests {
         repo.findByUsername("zhangsan")
                 .map(User::getUsername)
                 .ifPresent(username -> {
-                    log.debug("username:{}",username);
-                    assertEquals("zhangsan1",username);
+                    log.debug("username:{}", username);
+                    assertEquals("zhangsan1", username);
                 });
     }
 
@@ -82,19 +81,33 @@ public class OptionalStreamTests {
         repo.findByUsername("zhangsan")
                 .map(User::getUsername)
                 .ifPresent(username -> {
-                    System.out.println("有值:"+username);
+                    System.out.println("有值:" + username);
                 });
 
     }
 
+
+    public void tt(List<? super AbstractUser> abUsers) {
+
+    }
+
+    public void tt2(Stream<AbstractUser> abUsers) {
+
+    }
+
     @Test
-    public void foreacheList(){
-        List<Integer> list = Arrays.asList(1,2,3,4,5,null);
+    public void foreacheList() {
+
+
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, null);
 
         //old
-        if(!CollectionUtils.isEmpty(list)){
-            list.forEach(item -> System.out.println(item));
+        if (!CollectionUtils.isEmpty(list)) {
+            list.stream()
+                    .filter(Objects::nonNull)
+                    .forEach(item -> System.out.println(item));
         }
+
 
         //java 8
         Optional.ofNullable(list)
@@ -105,6 +118,16 @@ public class OptionalStreamTests {
                 });
 
 
+    }
 
+    @Test
+    public void foreacheListOptional() {
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, null);
+//        list = null;
+//        List<Integer> list= null;
+        System.out.println("xxx ");
+        Optional.ofNullable(list)
+                .ifPresent(it -> it.forEach(
+                        item -> System.out.println(item)));
     }
 }
