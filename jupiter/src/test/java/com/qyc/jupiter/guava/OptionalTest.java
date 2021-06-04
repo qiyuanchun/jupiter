@@ -54,32 +54,48 @@ public class OptionalTest {
     }
 
     public static void stream(List<String> list) {
-//        list.stream().forEach(System.out::println);
         Optional.ofNullable(list)
                 .map(List::stream)
                 .orElseGet(Stream::empty)
                 .forEach(System.out::println);
-
     }
 
 
     /**
      * Option与stream结合
+     * Optional.ofNullable  传入可以为空的对象
      */
     public static void streamListTest() {
 //        List<String> list = Arrays.asList("1","2","3");
         List<String> list = Stream.of("1","2","3").collect(Collectors.toList());
+        list= null;
+//        list= new ArrayList<>();
+        //这种方式list 为null会异常
+//       list = Optional.of(list)
+//               .get().stream()
+//                .filter(item -> item.equals("3"))
+//                .map(item -> item +"p")
+//                .collect(Collectors.toList())
+//                ;
 
-        list= new ArrayList<>();
-//        Option<String>
-       list = Optional.of(list)
+
+        list = Optional.ofNullable(list)
                 .map(List::stream)
-                .get()
+                .orElseGet(Stream::empty)
                 .filter(item -> item.equals("3"))
                 .map(item -> item +"p")
                 .collect(Collectors.toList())
-                ;
+        ;
 
+        //测试findFirst
+        String str = Optional.ofNullable(list)
+                .map(List::stream)
+                .orElseGet(Stream::empty)
+                .findFirst()
+                .orElse("ss");
+
+        ;
+        System.out.println(str);
         System.out.println(list);
 
     }

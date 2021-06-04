@@ -1,8 +1,8 @@
 package com.qyc.service.impl;
 
-import com.imooc.zhangxiaoxi.alllearning.exception.BusinessException;
-import com.imooc.zhangxiaoxi.alllearning.exception.ErrorCodeEnum;
-import com.imooc.zhangxiaoxi.alllearning.service.FileService;
+import com.qyc.exception.BusinessException;
+import com.qyc.exception.ErrorCodeEnum;
+import com.qyc.service.FileService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,7 @@ package com.qyc.domain.dto;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.annotation.format.DateTimeFormat;
-import com.imooc.zhangxiaoxi.alllearning.util.LocalDateTimeStringConverter;
+import com.qyc.util.LocalDateTimeStringConverter;
 import lombok.Data;
 
 import java.io.Serializable;

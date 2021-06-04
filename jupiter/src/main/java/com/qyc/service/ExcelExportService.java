@@ -1,6 +1,6 @@
 package com.qyc.service;
 
-import com.imooc.zhangxiaoxi.alllearning.domain.dto.UserQueryDTO;
+import com.qyc.domain.dto.UserQueryDTO;
 
 /**
  * 类名称：ExcelExportService
