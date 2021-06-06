@@ -34,6 +34,7 @@ public class CollectorsTests {
 
     @Test
     public void givenUsers_withToSet_thenSuccess() {
+
        Set<String> usernames = userList.stream()
                .map(User::getName)
                .collect(toSet());
