@@ -1,7 +1,8 @@
 package com.qyc.domain.dto;
 
+import com.qyc.util.InsertValidationGroup;
+import com.qyc.util.UpdateValidationGroup;
 import lombok.Data;
-import org.checkerframework.checker.units.qual.Length;
 
 import javax.validation.constraints.*;
 import java.io.Serializable;
@@ -36,8 +37,8 @@ public class UserDTO implements Serializable {
      */
     @NotBlank(message = "密码不能为空！",
             groups = {InsertValidationGroup.class})
-    @Length(min = 6, max = 18,
-            message = "密码长度不能少于6位，不能多于18位！")
+//    @Length(min = 6, max = 18,
+//            message = "密码长度不能少于6位，不能多于18位！")
     private String password;
 
     /**

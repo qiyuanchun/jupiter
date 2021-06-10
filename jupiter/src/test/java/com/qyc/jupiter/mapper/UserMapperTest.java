@@ -1,6 +1,7 @@
 package com.qyc.jupiter.mapper;
 
-import com.imooc.zhangxiaoxi.alllearning.domain.entity.UserDO;
+import com.qyc.domain.entity.UserDO;
+import com.qyc.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

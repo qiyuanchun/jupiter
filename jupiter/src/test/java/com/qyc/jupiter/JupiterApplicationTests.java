@@ -11,10 +11,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+//import org.junit.runner.RunWith;
+
 
 @Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = JupiterApplication.class)
+public
 class JupiterApplicationTests implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;

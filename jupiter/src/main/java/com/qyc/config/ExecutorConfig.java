@@ -23,6 +23,11 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Slf4j
 public class ExecutorConfig {
 
+    public static void main(String[] args) {
+        System.out.println(Runtime.getRuntime().availableProcessors());
+
+    }
+
     /**
      * 定义导出服务线程池
      * @return

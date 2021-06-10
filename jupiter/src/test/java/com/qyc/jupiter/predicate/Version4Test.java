@@ -1,7 +1,7 @@
 package com.qyc.jupiter.predicate;
 
 import com.alibaba.fastjson.JSON;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 

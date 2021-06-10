@@ -18,7 +18,7 @@ import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
 import com.google.common.base.CaseFormat;
 import com.google.common.collect.Lists;
 import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang.time.DateUtils;
+import org.apache.commons.lang3.time.DateUtils;
 
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
